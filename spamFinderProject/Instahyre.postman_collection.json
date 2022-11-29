@@ -1,0 +1,310 @@
+{
+	"info": {
+		"_postman_id": "646c79ec-da80-4086-9e00-c265e424fca0",
+		"name": "Instahyre",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24122150"
+	},
+	"item": [
+		{
+			"name": "Search-Name",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY5MjEyMDU2LCJqdGkiOiJmZjZhYzkyNDI4NWI0YmUxODQxMDVmZDA5NGFiNmQ3MiIsInVzZXJfaWQiOjF9.Eh981WS5OfXKYxYOL7jnQQNa2tLuNaFj0TBKVpsE590",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "phone_number",
+						"value": "12314234",
+						"type": "text"
+					},
+					{
+						"key": "name",
+						"value": "django1234",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "david",
+							"type": "text"
+						},
+						{
+							"key": "reported_by",
+							"value": "2",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/search-name/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"search-name",
+						""
+					]
+				},
+				"description": "API end-point for searching for contact via name. Displaying those with the search string in the first name in the beginning and those with the search string in their name after\n\nBearerToken Authentication is required to access this endpoint"
+			},
+			"response": []
+		},
+		{
+			"name": "CreateContact",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY5MjEyMDU2LCJqdGkiOiJmZjZhYzkyNDI4NWI0YmUxODQxMDVmZDA5NGFiNmQ3MiIsInVzZXJfaWQiOjF9.Eh981WS5OfXKYxYOL7jnQQNa2tLuNaFj0TBKVpsE590",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "phone_number",
+							"value": "12452368",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Johnson David",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/contact/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"contact",
+						""
+					]
+				},
+				"description": "API Endpoint for creating a contact.\n\nArguments to be given in the body are phone_number and name.\n\nBearerToken Authentication is required to access this endpoint"
+			},
+			"response": []
+		},
+		{
+			"name": "ReportSpam",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY5MjEyMDU2LCJqdGkiOiJmZjZhYzkyNDI4NWI0YmUxODQxMDVmZDA5NGFiNmQ3MiIsInVzZXJfaWQiOjF9.Eh981WS5OfXKYxYOL7jnQQNa2tLuNaFj0TBKVpsE590",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "contact_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "reported_by",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/spam/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"spam",
+						""
+					]
+				},
+				"description": "API Endpoint for reporting a contact as a spam.\n\nArguments to be given:  \ncontact_id, reported_by,\n\nBearerToken Authentication is required to access this endpoint"
+			},
+			"response": []
+		},
+		{
+			"name": "Search-Phone",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY5MjEyMDU2LCJqdGkiOiJmZjZhYzkyNDI4NWI0YmUxODQxMDVmZDA5NGFiNmQ3MiIsInVzZXJfaWQiOjF9.Eh981WS5OfXKYxYOL7jnQQNa2tLuNaFj0TBKVpsE590",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "phone",
+							"value": "111111111",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/search-phone/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"search-phone",
+						""
+					]
+				},
+				"description": "API endpoint for searching for a phone_number in the global database.\n\nArguments given:\n\nname,phone_number\n\noutput:\n\nname,phone_number,spam_likelihood\n\nBearerToken Authentication is required to access this endpoint"
+			},
+			"response": []
+		},
+		{
+			"name": "Registeration",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "newuser",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Django1234",
+							"type": "text"
+						},
+						{
+							"key": "phone_number",
+							"value": "9734523123",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "newuser@domain.com",
+							"description": "This is an optional Field",
+							"type": "text"
+						},
+						{
+							"key": "first_name",
+							"value": "john",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/auth/users/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"auth",
+						"users",
+						""
+					]
+				},
+				"description": "API endpoint for registering a new user to the app.\n\nArguments to be given:\n\nusername,phone_number,email(optional),first_name"
+			},
+			"response": []
+		},
+		{
+			"name": "GetJWTForLogin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "newuser",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Django1234",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/auth/jwt/create/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"auth",
+						"jwt",
+						"create",
+						""
+					]
+				},
+				"description": "API for retrieving the access token to login\n\nCopy the access token and add it to bearer token in the Auth section.\n\narguments to be given:\n\nusername, password."
+			},
+			"response": []
+		}
+	]
+}
